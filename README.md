@@ -55,7 +55,7 @@ Below are real screenshots from the deployed Medical Chatbot, showing grounded r
 
 ### 💬 Query: What is acromegaly and gigantism?
 
-<img src="assets/demo1.jpeg" alt="Medical Chatbot Demo 1" width="100%">
+<img src="demo1.jpeg" alt="Medical Chatbot Demo 1" width="100%">
 
 </td>
 
@@ -63,7 +63,7 @@ Below are real screenshots from the deployed Medical Chatbot, showing grounded r
 
 ### 💬 Query: Treatment of acromegaly and gigantism?
 
-<img src="assets/demo2.jpeg" alt="Medical Chatbot Demo 2" width="100%">
+<img src="demo2.jpeg" alt="Medical Chatbot Demo 2" width="100%">
 
 </td>
 
