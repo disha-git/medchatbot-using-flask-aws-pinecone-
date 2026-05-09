@@ -110,7 +110,7 @@ The system operates in **two distinct phases**:
 ║  [CharacterTextSplitter]  ──►  500-char chunks, 20 overlap   ║
 ║       │                                                      ║
 ║       ▼                                                      ║
-║  [HuggingFaceEmbeddings]  ──►  all-MiniLM-L6-v2 (384-dim)   ║
+║  [HuggingFaceEmbeddings]  ──►  all-MiniLM-L6-v2 (384-dim)    ║
 ║       │                                                      ║
 ║       ▼                                                      ║
 ║  [Pinecone Vector Store]  ──►  Store & index all vectors     ║
@@ -121,7 +121,7 @@ The system operates in **two distinct phases**:
 ║  💬 User Question (Flask UI)                                 ║
 ║       │                                                      ║
 ║       ▼                                                      ║
-║  [Embed Query]  ──►  same all-MiniLM-L6-v2 model            ║
+║  [Embed Query]  ──►  same all-MiniLM-L6-v2 model             ║
 ║       │                                                      ║
 ║       ▼                                                      ║
 ║  [FAISS Retriever]  ──►  Find Top-K=3 relevant chunks        ║
@@ -141,16 +141,86 @@ The system operates in **two distinct phases**:
 
 ## 🛠️ Technology Stack
 
-| Component | Technology | Purpose |
-|-----------|-----------|---------|
-| 🦜 Orchestration | LangChain 0.1.0 | RAG chain & RetrievalQA pipeline |
-| 🌲 Vector Database | Pinecone | Managed semantic vector search |
-| 🤖 LLM | OpenAI GPT-4 / GPT-3.5 | Response generation |
-| 🤗 Embeddings | HuggingFace `all-MiniLM-L6-v2` | 384-dim text embeddings |
-| 🌶️ Web Framework | Flask 2.3.0 | REST API & web interface |
-| ☁️ Cloud | AWS EC2 | Deployment & hosting |
-| 🐳 Container | Docker | Containerisation |
-| 📚 Knowledge Base | Gale Encyclopedia of Medicine | Authoritative medical reference |
+<table>
+<tr>
+<th>Component</th>
+<th>Technology</th>
+<th>Purpose</th>
+</tr>
+
+<tr>
+<td>
+<img src="https://cdn.simpleicons.org/langchain/ffffff" width="18">
+ Orchestration
+</td>
+<td>LangChain 0.1.0</td>
+<td>RAG chain & RetrievalQA pipeline</td>
+</tr>
+
+<tr>
+<td>
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Pinecone_Logo.png" width="18">
+ Vector Database
+</td>
+<td>Pinecone</td>
+<td>Managed semantic vector search</td>
+</tr>
+
+<tr>
+<td>
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" width="18">
+ LLM
+</td>
+<td>OpenAI GPT-4 / GPT-3.5</td>
+<td>Response generation</td>
+</tr>
+
+
+<tr>
+<td>
+<img src="https://cdn.simpleicons.org/huggingface/FFD21E" width="18">
+ Embeddings
+</td>
+<td>HuggingFace <code>all-MiniLM-L6-v2</code></td>
+<td>384-dim text embeddings</td>
+</tr>
+
+<tr>
+<td>
+<img src="https://cdn.simpleicons.org/flask/ffffff" width="18">
+ Web Framework
+</td>
+<td>Flask 2.3.0</td>
+<td>REST API & web interface</td>
+</tr>
+
+<td>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" width="18">
+ Cloud
+</td>
+<td>AWS EC2</td>
+<td>Deployment & hosting</td>
+</tr>
+
+<tr>
+<td>
+<img src="https://cdn.simpleicons.org/docker/2496ED" width="18">
+ Container
+</td>
+<td>Docker</td>
+<td>Containerisation</td>
+</tr>
+
+<tr>
+<td>
+<img src="https://cdn.simpleicons.org/bookstack/ffffff" width="18">
+ Knowledge Base
+</td>
+<td>Gale Encyclopedia of Medicine</td>
+<td>Authoritative medical reference</td>
+</tr>
+
+</table>
 
 ---
 
@@ -300,7 +370,7 @@ print(f"Total chunks created: {len(chunks)}")
 
 ---
 
-## 🌶️ app.py — Flask Application
+##  app.py — Flask Application
 
 The main web application. Handles incoming queries, runs the RAG chain, and returns responses with medical disclaimers.
 
@@ -378,8 +448,6 @@ docker run -p 5000:5000 --env-file .env medchatbot
 - [LangChain](https://python.langchain.com) open-source community
 - [Pinecone](https://www.pinecone.io) for free-tier vector database access
 - Editors of the *Gale Encyclopedia of Medicine* — the foundational knowledge base
-- Techno College of Engineering Agartala — Department of AI & Data Science
-- **Supervisor:** Ms. Rajna Saha, Assistant Professor, Dept. of CSE, TCEA
 
 ---
 
